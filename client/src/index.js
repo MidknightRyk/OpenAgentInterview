@@ -1,13 +1,43 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './App.css';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+import LandingPage from "./pages/LandingPage";
+import ContactUs from "./pages/ContactUs";
+import ContactList from "./pages/ContactList";
+import ThankYou from "./pages/ThankYou";
+
+const apiBaseURL = "http://localhost:8080"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LandingPage />,
+  },
+  {
+    path: "/contact-us",
+    element: <ContactUs props={apiBaseURL} />,
+  },
+    {
+    path: "/contact-list",
+    element: <ContactList props={apiBaseURL} />,
+    },
+      {
+    path: "/thank-you",
+    element: <ThankYou />,
+  }
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
