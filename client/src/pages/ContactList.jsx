@@ -1,21 +1,16 @@
-import axios from 'axios';
-import React from 'react';
+import axios from "axios";
+import React from "react";
 
+const ContactList = () => {
+    const contactList = axios.get(`${this.props.apiBaseURL}/contacts`);
 
-class ContactList extends React.Component {
-
-    contactList = axios.get(`${this.props.apiBaseURL}/contacts`)
-    render() {
-        return(
+    return (
         <div>
             <header>
-
                 <p>contact list table/grid goes here</p>
-        
             </header>
         </div>
-        )
-    };
-}
+    );
+};
 
 export default ContactList;
