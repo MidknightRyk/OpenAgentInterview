@@ -19,11 +19,11 @@ const router = createBrowserRouter([
     },
     {
         path: "/contact-us",
-        element: <ContactUs props={apiBaseURL} />,
+        element: <ContactUs apiBaseURL={apiBaseURL} />,
     },
     {
         path: "/contact-list",
-        element: <ContactList props={apiBaseURL} />,
+        element: <ContactList apiBaseURL={apiBaseURL} />,
     },
     {
         path: "/thank-you",

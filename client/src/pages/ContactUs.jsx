@@ -2,7 +2,7 @@ import React from "react";
 import MainContainer from "../components/MainContainer";
 import ContactUsForm from "../components/ContactUsForm";
 
-const ContactUs = () => {
+const ContactUs = ({ apiBaseURL }) => {
     return (
         <MainContainer>
             <div className="flex flex-col justify-center items-center w-screen mt-10">
@@ -32,7 +32,7 @@ const ContactUs = () => {
                         <strong>Contact centre hours of operation</strong>
                         <p className="mb-6">Monday - Friday 8:30 - 5:00</p>
                     </div>
-                    <ContactUsForm />
+                    <ContactUsForm apiBaseURL={apiBaseURL} />
                 </div>
             </div>
         </MainContainer>

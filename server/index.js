@@ -34,7 +34,6 @@ Contact.init(
 		},
 		note: {
 			type: DataTypes.STRING,
-			allowNull: true,
 			defaultValue: "No notes added",
 		},
 		verified: {
@@ -71,6 +70,7 @@ app.post("/contacts", async (req, res) => {
 app.put("/contacts/:id", async (req, res) => {
 	const contact = await Contact.findByPk(req.params.id);
 	if (contact) {
+		console.log(req.body);
 		await contact.update(req.body);
 		res.json(contact);
 	} else {

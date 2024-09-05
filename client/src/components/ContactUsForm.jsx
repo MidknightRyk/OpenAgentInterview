@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const ContactUsForm = () => {
+const ContactUsForm = ({ apiBaseURL }) => {
     const navigate = useNavigate();
 
     const [inputs, setInputs] = useState({
@@ -17,6 +17,7 @@ const ContactUsForm = () => {
     const [error, setError] = useState(false);
 
     const handleChange = (event) => {
+        console.log(event);
         const name = event.target.name;
         const value = event.target.value;
         setInputs((values) => ({ ...values, [name]: value }));
@@ -24,10 +25,16 @@ const ContactUsForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(inputs);
+        console.log(inputs);
         setError(false);
         axios
-            .post(`${this.props.apiBaseURL}/contacts`, { inputs })
+            .post(`${apiBaseURL}/contacts`, {
+                firstName: inputs.firstName,
+                lastName: inputs.lastName,
+                email: inputs.email,
+                phone: inputs.phone,
+                note: inputs.note,
+            })
             .then((res) => {
                 //this console.log will be in our frontend console
                 console.log(res);
@@ -54,6 +61,7 @@ const ContactUsForm = () => {
                     <label className="font-semibold">First Name:</label>
                     <input
                         type="text"
+                        name="firstName"
                         className="bg-slate-200 border-3 border-black rounded-md h-8 my-2"
                         value={inputs.firstName}
                         onChange={handleChange}
@@ -63,7 +71,7 @@ const ContactUsForm = () => {
                     <label className="font-semibold">Last Name:</label>
                     <input
                         type="text"
-                        lastName="Last Name"
+                        name="lastName"
                         className="bg-slate-200 border-3 border-black rounded-md h-8 my-2"
                         value={inputs.lastName}
                         onChange={handleChange}
@@ -73,7 +81,7 @@ const ContactUsForm = () => {
             <label className="font-semibold">Phone Number:</label>
             <input
                 type="number"
-                phone="Phone Number"
+                name="phone"
                 className="bg-slate-200 border-3 border-black rounded-md h-8 my-2"
                 value={inputs.phone}
                 onChange={handleChange}
@@ -81,14 +89,14 @@ const ContactUsForm = () => {
             <label className="font-semibold">Email:</label>
             <input
                 type="text"
-                email="Email"
+                name="email"
                 className="bg-slate-200 border-3 border-black rounded-md h-8 my-2"
                 value={inputs.email}
                 onChange={handleChange}
             />
             <label className="font-semibold">Inquiry or Notes:</label>
             <textarea
-                note="Note"
+                name="note"
                 className="bg-slate-200 border-3 border-black rounded-md h-20 my-2"
                 value={inputs.note}
                 onChange={handleChange}

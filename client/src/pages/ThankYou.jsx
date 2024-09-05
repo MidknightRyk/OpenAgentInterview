@@ -1,10 +1,8 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import MainContainer from "../components/MainContainer";
 
 const ThankYou = () => {
     return (
-        <div className="bg-gray-400 h-screen">
-            <Header />
+        <MainContainer>
             <div className="flex items-center justify-center flex-col mt-40">
                 <h1 className="mb-10 text-lg font-bold">
                     Thank you for submitting your contact info!
@@ -19,8 +17,7 @@ const ThankYou = () => {
                     Click Me!
                 </a>
             </div>
-            <Footer />
-        </div>
+        </MainContainer>
     );
 };
 
