@@ -8,8 +8,8 @@ const ContactList = ({ apiBaseURL }) => {
     const [error, setError] = useState(false);
 
     const handleVerify = (event) => {
-        const id = event.target.value;
         setError(true);
+        const id = event.target.value;
         axios
             .put(`${apiBaseURL}/contacts/${id}`, { verified: "true" })
             .then((res) => {
@@ -29,6 +29,7 @@ const ContactList = ({ apiBaseURL }) => {
             "Are you sure you want to delete this contact?",
         );
         if (confirm) {
+            setError(true);
             const id = event.target.value;
             axios
                 .delete(`${apiBaseURL}/contacts/${id}`)
