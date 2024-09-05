@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "./CustomButton";
 
 const Footer = () => {
     return (
@@ -18,31 +19,41 @@ const Footer = () => {
                                 <span className="text-xs text-white">
                                     © 2024{" "}
                                 </span>
-                                <a
-                                    href="https://www.openagent.com.au/privacy-policy"
-                                    className="text-xs text-gray-400 hover:border-b">
+                                <CustomButton
+                                    type="disclaimers"
+                                    linkTo={
+                                        "https://www.openagent.com.au/privacy-policy"
+                                    }>
                                     Privacy Policy
-                                </a>
-                                <a
-                                    href="https://www.openagent.com.au/privacy-policy"
-                                    className="text-xs text-gray-400 hover:border-b">
+                                </CustomButton>
+                                <CustomButton
+                                    type="disclaimers"
+                                    linkTo={
+                                        "https://www.openagent.com.au/terms"
+                                    }>
                                     Terms and Conditions
-                                </a>
-                                <a
-                                    href="https://www.openagent.com.au/complaints-policy"
-                                    className="text-xs text-gray-400 hover:border-b">
+                                </CustomButton>
+                                <CustomButton
+                                    type="disclaimers"
+                                    linkTo={
+                                        "https://www.openagent.com.au/complaints-policy"
+                                    }>
                                     Complaints Policy
-                                </a>
-                                <a
-                                    href="https://www.openagent.com.au/sitemap"
-                                    className="text-xs text-gray-400 hover:border-b">
+                                </CustomButton>
+                                <CustomButton
+                                    type="disclaimers"
+                                    linkTo={
+                                        "https://www.openagent.com.au/sitemap"
+                                    }>
                                     Site Map
-                                </a>
-                                <a
-                                    href="https://s3.ap-southeast-2.amazonaws.com/openagent.strapi/OAPL_Website_Credit_Guide_Q1_2024_47a402149b.pdf"
-                                    className="text-xs text-gray-400 hover:border-b">
+                                </CustomButton>
+                                <CustomButton
+                                    type="disclaimers"
+                                    linkTo={
+                                        "https://s3.ap-southeast-2.amazonaws.com/openagent.strapi/OAPL_Website_Credit_Guide_Q1_2024_47a402149b.pdf"
+                                    }>
                                     Credit Guide
-                                </a>
+                                </CustomButton>
                             </div>
                         </div>
                         <div className="mr-10" id="social-media">
@@ -52,46 +63,56 @@ const Footer = () => {
                             <div className="ml-5" id="social-media-icons">
                                 <div className="sm:flex sm:items-center sm:justify-between">
                                     <div className="flex mt-4 sm:justify-center sm:mt-0 gap-2">
-                                        <a
-                                            href="https://www.facebook.com/openagent"
-                                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full border border-gray-400 py-1 px-3">
+                                        <CustomButton
+                                            type="icons"
+                                            linkTo={
+                                                "https://www.facebook.com/openagent"
+                                            }>
                                             <i className="fa-brands fa-facebook-f fa-xs"></i>
                                             <span className="sr-only">
                                                 Facebook page
                                             </span>
-                                        </a>
-                                        <a
-                                            href="https://twitter.com/openagentoz"
-                                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full border border-gray-400 py-1 px-3">
+                                        </CustomButton>
+                                        <CustomButton
+                                            type="icons"
+                                            linkTo={
+                                                "https://twitter.com/openagentoz"
+                                            }>
                                             <i className="fa-brands fa-twitter fa-xs"></i>
                                             <span className="sr-only">
-                                                Facebook page
+                                                Twitter page
                                             </span>
-                                        </a>
-                                        <a
-                                            href="https://www.linkedin.com/company/openagent-com-au"
-                                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full border border-gray-400 py-1 px-3">
+                                        </CustomButton>
+                                        <CustomButton
+                                            type="icons"
+                                            linkTo={
+                                                "https://www.linkedin.com/company/openagent-com-au"
+                                            }>
                                             <i className="fa-brands fa-linkedin-in fa-xs"></i>
                                             <span className="sr-only">
-                                                Facebook page
+                                                LinkedIn page
                                             </span>
-                                        </a>
-                                        <a
-                                            href="https://www.youtube.com/channel/UCuYgvKggXpYWCZ8LEtMA0lg"
-                                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full border border-gray-400 py-1 px-2.5">
+                                        </CustomButton>
+                                        <CustomButton
+                                            type="icons"
+                                            linkTo={
+                                                "https://www.youtube.com/channel/UCuYgvKggXpYWCZ8LEtMA0lg"
+                                            }>
                                             <i className="fa-brands fa-youtube fa-xs"></i>
                                             <span className="sr-only">
-                                                Facebook page
+                                                Youtube page
                                             </span>
-                                        </a>
-                                        <a
-                                            href="https://www.instagram.com/openagentau/"
-                                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white rounded-full border border-gray-400 py-1 px-3">
+                                        </CustomButton>
+                                        <CustomButton
+                                            type="icons"
+                                            linkTo={
+                                                "https://www.instagram.com/openagentau/"
+                                            }>
                                             <i className="fa-brands fa-instagram fa-xs"></i>
                                             <span className="sr-only">
-                                                Facebook page
+                                                Instagram page
                                             </span>
-                                        </a>
+                                        </CustomButton>
                                     </div>
                                 </div>
                             </div>

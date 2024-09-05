@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import MainContainer from "../components/MainContainer";
 import { useState, useEffect } from "react";
+import CustomButton from "../components/CustomButton";
 
 const ContactList = ({ apiBaseURL }) => {
     const [contacts, setContacts] = useState([]);
@@ -102,6 +103,8 @@ const ContactList = ({ apiBaseURL }) => {
                                 <strong>No Contacts Found</strong>
                             ) : (
                                 contacts?.map((contact) => {
+                                    const isVerified =
+                                        contact.verified === "true";
                                     return (
                                         <tr class="odd:bg-slate-300 even:bg-gray-100 border-b">
                                             <th
@@ -126,26 +129,23 @@ const ContactList = ({ apiBaseURL }) => {
                                             </td>
 
                                             <td class="px-6 py-4">
-                                                {contact.verified === "true" ? (
-                                                    <button className="disabled cursor-not-allowed text-white bg-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
-                                                        Verified
-                                                    </button>
-                                                ) : (
-                                                    <button
-                                                        className="text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
-                                                        onClick={handleVerify}
-                                                        value={contact.id}>
-                                                        Verify
-                                                    </button>
-                                                )}
+                                                <CustomButton
+                                                    type="action"
+                                                    action={handleVerify}
+                                                    value={contact.id}
+                                                    disabled={isVerified}>
+                                                    {isVerified
+                                                        ? "Verified"
+                                                        : "Verify"}
+                                                </CustomButton>
                                             </td>
                                             <td class="px-6 py-4">
-                                                <button
-                                                    value={contact.id}
-                                                    onClick={handleDelete}
-                                                    className="text-white bg-gray-800 hover:bg-gray-500 focus:outline-none focus:ring-4 focus:ring-gray-300 font-large rounded-lg text-sm px-5 py-2.5 me-2 mb-2">
+                                                <CustomButton
+                                                    type="action"
+                                                    action={handleDelete}
+                                                    value={contact.id}>
                                                     Delete
-                                                </button>
+                                                </CustomButton>
                                             </td>
                                         </tr>
                                     );

@@ -1,4 +1,5 @@
 import React from "react";
+import CustomButton from "./CustomButton";
 
 const Header = () => {
     return (
@@ -17,26 +18,23 @@ const Header = () => {
                         id="mobile-menu-2">
                         <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                             <li>
-                                <a
-                                    href="/"
-                                    className="block py-2 px-4 font-semibold text-gray-700 hover:bg-gray-700 hover:rounded-md hover:text-white"
-                                    aria-current="page">
+                                <CustomButton type="header" linkTo={"/"}>
                                     Home
-                                </a>
+                                </CustomButton>
                             </li>
                             <li>
-                                <a
-                                    href="/contact-us"
-                                    className="block py-2 px-4 font-semibold text-gray-700 hover:bg-gray-700 hover:rounded-md hover:text-white">
+                                <CustomButton
+                                    type="header"
+                                    linkTo={"/contact-us"}>
                                     Contact Us
-                                </a>
+                                </CustomButton>
                             </li>
                             <li>
-                                <a
-                                    href="/contact-list"
-                                    className="block py-2 px-4 font-semibold text-gray-700 hover:bg-gray-700 hover:rounded-md hover:text-white">
+                                <CustomButton
+                                    type="header"
+                                    linkTo={"/contact-list"}>
                                     Contact List
-                                </a>
+                                </CustomButton>
                             </li>
                         </ul>
                     </div>

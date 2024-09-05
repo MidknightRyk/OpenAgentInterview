@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import CustomButton from "./CustomButton";
 
 const ContactUsForm = ({ apiBaseURL }) => {
     const navigate = useNavigate();
@@ -205,10 +206,7 @@ const ContactUsForm = ({ apiBaseURL }) => {
             <p className={`text-red-600 ${error ? "" : "hidden"}`}>
                 There was a problem processing your form.
             </p>
-            <input
-                className={`${disabledButton ? "disabled bg-gray-400 hover:bg-gray-400 cursor-not-allowed " : ""}text-white bg-gray-800 hover:bg-gray-400 focus:outline-none focus:ring-4 focus:ring-gray-300 font-large rounded-lg text-sm px-6 py-2.5 me-2 mb-2 mt-3`}
-                type="submit"
-            />
+            <CustomButton disabled={disabledButton} type="submit" />
         </form>
     );
 };
