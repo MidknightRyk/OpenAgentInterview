@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="fixed bottom-0 w-screen">
-            <nav className="bg-neutral-800 border-gray-200 py-8 px-20">
+        <footer className="fixed bottom-0 w-screen h-35">
+            <nav className="bg-neutral-800 border-gray-200 py-6 px-20">
                 <div className="">
                     <div className="flex justify-between items-center">
                         <div>
@@ -46,7 +46,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="mr-10" id="social-media">
-                            <h2 className="text-white text-lg font-semibold mb-4">
+                            <h2 className="text-white text-lg font-semibold mb-2">
                                 Follow Us
                             </h2>
                             <div className="ml-5" id="social-media-icons">

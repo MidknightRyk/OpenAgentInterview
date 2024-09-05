@@ -26,14 +26,14 @@ const Header = () => {
                             </li>
                             <li>
                                 <a
-                                    href="/ContactUs"
+                                    href="/contact-us"
                                     className="block py-2 px-4 font-semibold text-gray-700 hover:bg-gray-700 hover:rounded-md hover:text-white">
                                     Contact Us
                                 </a>
                             </li>
                             <li>
                                 <a
-                                    href="/ContactList"
+                                    href="/contact-list"
                                     className="block py-2 px-4 font-semibold text-gray-700 hover:bg-gray-700 hover:rounded-md hover:text-white">
                                     Contact List
                                 </a>
