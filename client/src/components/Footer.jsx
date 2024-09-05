@@ -1,5 +1,4 @@
 import React from "react";
-import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
 
 class Footer extends React.Component {
     render() {
