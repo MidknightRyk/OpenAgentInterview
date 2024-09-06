@@ -22,6 +22,13 @@ I hope you enjoy playing around with the app!
 
 ## Run the App
 
+Clone the repo either using the below command in your terminal or your preferred method.
+
+```
+cd <directory you want to clone the repo to>
+git clone https://github.com/<Your-Github-Username>/OpenAgentInterview.git
+```
+
 The ports the App listens to are:
 
 - Client: `3000`
