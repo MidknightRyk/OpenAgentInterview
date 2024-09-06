@@ -1,0 +1,27 @@
+services:
+  server:
+    build:
+      context: server
+      dockerfile: ./Dockerfile
+      target: development
+    command: node ./src/index.js
+    environment:
+      NODE_ENV: production
+    ports:
+      - 8080:8080
+    volumes:
+      - ./server/src:/server/src:ro
+      - ./server/package.json:/server/package.json
+      - ./server/package-lock.json:/server/package-lock.json
+  client:
+    build:
+      context: client
+      dockerfile: ./Dockerfile
+      target: development
+    ports:
+      - 3000:3000
+    volumes:
+      - ./client/src:/client/src
+      - /client/node_modules
+    depends_on:
+      - server
