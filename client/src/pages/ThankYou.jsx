@@ -12,7 +12,7 @@ const ThankYou = () => {
                 <p className="mb-10">We will be in touch with you shortly</p>
 
                 <p className="mb-2">Psst! Want to head back to home page?</p>
-                <CustomButton>Click Me!</CustomButton>
+                <CustomButton linkTo={"/"}>Click Me!</CustomButton>
             </div>
         </MainContainer>
     );
